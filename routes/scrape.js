@@ -22,8 +22,10 @@ router.get('/', function(req, res, next) {
     }
 
     $ = cheerio.load(response.text)
-    $('<p>').each(function(i, element){
-      console.log(element)
+    var spaces = '*********************###########*****************'
+    
+    $('p').each(function(i, element){
+      console.log(element.children, spaces)
     })
 
     res.send(response.text)
